@@ -58,9 +58,9 @@ kubectl create namespace a-team
 # Crossplane #
 ##############
 
-helm upgrade --install crossplane crossplane \
+helm upgrade --debug --install crossplane crossplane \
     --repo https://charts.crossplane.io/stable \
-    --namespace crossplane-system --create-namespace --wait
+    --namespace crossplane-system --create-namespace --wait -f crossplane-values.yaml
 
 echo "## Which Hyperscaler do you want to use?" | gum format
 
